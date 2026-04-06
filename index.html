@@ -2,171 +2,132 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Alan Tinajero | Intelligence System</title>
+<title>AI Intelligence System</title>
 
 <style>
 body {
     margin: 0;
-    font-family: 'Courier New', monospace;
-    background: #05070d;
+    background: black;
     color: #00ffcc;
+    font-family: monospace;
+}
+
+/* RADAR */
+.radar {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle at center, rgba(0,255,200,0.1) 0%, transparent 70%);
+    overflow: hidden;
+    z-index: -1;
+}
+
+.sweep {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(0deg, transparent, #00ffcc);
+    transform-origin: center;
+    animation: sweep 4s linear infinite;
+}
+
+@keyframes sweep {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
 /* HEADER */
 header {
-    padding: 30px;
     text-align: center;
-    border-bottom: 1px solid #00ffcc33;
+    padding: 40px;
 }
 
 h1 {
-    margin: 0;
-    font-size: 36px;
-}
-
-.subtitle {
-    color: #00d4ff;
-    margin-top: 10px;
-}
-
-/* LAYOUT */
-.container {
-    display: flex;
-}
-
-/* SIDEBAR */
-.sidebar {
-    width: 250px;
-    background: #0a0f1c;
-    padding: 20px;
-    height: 100vh;
-    border-right: 1px solid #00ffcc22;
-}
-
-.sidebar a {
-    display: block;
-    color: #00ffcc;
-    padding: 10px 0;
-    text-decoration: none;
-}
-
-.sidebar a:hover {
-    color: white;
-}
-
-/* MAIN */
-.main {
-    flex: 1;
-    padding: 30px;
+    text-shadow: 0 0 20px #00ffcc;
 }
 
 /* CARDS */
+.container {
+    max-width: 900px;
+    margin: auto;
+}
+
 .card {
-    background: #0f1626;
+    background: rgba(0,0,0,0.7);
+    border: 1px solid #00ffcc33;
     padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    border: 1px solid #00ffcc22;
+    margin: 20px;
+    box-shadow: 0 0 20px #00ffcc33;
 }
 
 /* BUTTON */
 .btn {
-    display: inline-block;
-    padding: 10px 20px;
     background: #00ffcc;
     color: black;
-    border-radius: 5px;
+    padding: 10px;
+    display: inline-block;
     margin-top: 10px;
     text-decoration: none;
 }
 
-iframe {
-    width: 100%;
-    height: 600px;
-    border: none;
-    border-radius: 10px;
+/* TYPING */
+.typing {
+    font-size: 18px;
+    color: #00ffcc;
 }
 </style>
 </head>
 
 <body>
 
+<div class="radar">
+    <div class="sweep"></div>
+</div>
+
 <header>
     <h1>🛰️ GLOBAL INTELLIGENCE SYSTEM</h1>
-    <div class="subtitle">
-        Alan Raúl Tinajero | AI-Powered OSINT Analyst
-    </div>
+    <div class="typing" id="typing"></div>
 </header>
 
 <div class="container">
 
-    <!-- SIDEBAR -->
-    <div class="sidebar">
-        <h3>Navigation</h3>
-
-        <a href="#about">🧠 About</a>
-        <a href="#system">🚀 System</a>
-        <a href="#projects">🧪 Projects</a>
-        <a href="#github">💻 GitHub</a>
-        <a href="#contact">📩 Contact</a>
-
-        <hr>
-
-        <a href="https://github.com/AlanTinajero" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/alan-raul-tinajero-rangel-300a18216/" target="_blank">LinkedIn</a>
+    <div class="card">
+        <h2>🧠 About</h2>
+        <p>AI-powered OSINT system detecting threats in real time.</p>
     </div>
 
-    <!-- MAIN -->
-    <div class="main">
+    <div class="card">
+        <h2>🚀 Live System</h2>
 
-        <div class="card" id="about">
-            <h2>🧠 About</h2>
-            <p>
-            AI-powered OSINT analyst building real-time intelligence systems for threat detection, behavioral analysis, and geospatial intelligence.
-            </p>
-        </div>
+        <a class="btn" href="https://share.streamlit.io/user/alantinajero" target="_blank">
+            Launch System
+        </a>
+    </div>
 
-        <div class="card" id="system">
-            <h2>🚀 Live Intelligence System</h2>
+    <div class="card">
+        <h2>💻 GitHub</h2>
 
-            <p>Real-time OSINT + AI threat detection dashboard</p>
-
-            <iframe src="https://share.streamlit.io/user/alantinajero"></iframe>
-        </div>
-
-        <div class="card" id="projects">
-            <h2>🧪 Projects</h2>
-
-            <p><b>AI Global Intelligence System</b><br>
-            Detects threats using OSINT, AI, and geospatial analysis</p>
-
-            <p><b>OSINT Social Analyzer</b><br>
-            Detects coordinated behavior and influence patterns</p>
-
-            <p><b>AI Medical Detection</b><br>
-            Computer vision for early diagnostics</p>
-        </div>
-
-        <div class="card" id="github">
-            <h2>💻 GitHub</h2>
-
-            <p>Explore full code and intelligence systems:</p>
-
-            <a class="btn" href="https://github.com/AlanTinajero" target="_blank">
-                View GitHub
-            </a>
-        </div>
-
-        <div class="card" id="contact">
-            <h2>📩 Contact</h2>
-
-            <p>Email: araultinajero@yahoo.com</p>
-            <p>Phone: +52 5535154446</p>
-        </div>
-
+        <a class="btn" href="https://github.com/AlanTinajero" target="_blank">
+            View Code
+        </a>
     </div>
 
 </div>
+
+<script>
+const text = "Initializing OSINT AI System... Threat Detection Active...";
+let i = 0;
+
+function type() {
+    if (i < text.length) {
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(type, 40);
+    }
+}
+
+type();
+</script>
 
 </body>
 </html>
