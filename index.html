@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
-<title>AI Intelligence System</title>
+<title>AI Intelligence</title>
 
 <style>
 body {
@@ -10,70 +10,39 @@ body {
     background: black;
     color: #00ffcc;
     font-family: monospace;
+    overflow: hidden;
 }
 
 /* RADAR */
 .radar {
     position: fixed;
-    width: 100vw;
-    height: 100vh;
-    background: radial-gradient(circle at center, rgba(0,255,200,0.1) 0%, transparent 70%);
-    overflow: hidden;
-    z-index: -1;
+    width: 100%;
+    height: 100%;
 }
 
-.sweep {
+.line {
     position: absolute;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(0deg, transparent, #00ffcc);
-    transform-origin: center;
-    animation: sweep 4s linear infinite;
+    width: 100%;
+    height: 2px;
+    background: #00ffcc;
+    top: 50%;
+    transform-origin: left;
+    animation: rotate 3s linear infinite;
 }
 
-@keyframes sweep {
+@keyframes rotate {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 }
 
-/* HEADER */
-header {
+/* TEXT */
+#typing {
+    position: absolute;
+    top: 40%;
+    width: 100%;
     text-align: center;
-    padding: 40px;
-}
-
-h1 {
-    text-shadow: 0 0 20px #00ffcc;
-}
-
-/* CARDS */
-.container {
-    max-width: 900px;
-    margin: auto;
-}
-
-.card {
-    background: rgba(0,0,0,0.7);
-    border: 1px solid #00ffcc33;
-    padding: 20px;
-    margin: 20px;
-    box-shadow: 0 0 20px #00ffcc33;
-}
-
-/* BUTTON */
-.btn {
-    background: #00ffcc;
-    color: black;
-    padding: 10px;
-    display: inline-block;
-    margin-top: 10px;
-    text-decoration: none;
-}
-
-/* TYPING */
-.typing {
-    font-size: 18px;
-    color: #00ffcc;
+    font-size: 20px;
+    text-shadow: 0 0 10px #00ffcc;
 }
 </style>
 </head>
@@ -81,48 +50,20 @@ h1 {
 <body>
 
 <div class="radar">
-    <div class="sweep"></div>
+    <div class="line"></div>
 </div>
 
-<header>
-    <h1>🛰️ GLOBAL INTELLIGENCE SYSTEM</h1>
-    <div class="typing" id="typing"></div>
-</header>
-
-<div class="container">
-
-    <div class="card">
-        <h2>🧠 About</h2>
-        <p>AI-powered OSINT system detecting threats in real time.</p>
-    </div>
-
-    <div class="card">
-        <h2>🚀 Live System</h2>
-
-        <a class="btn" href="https://share.streamlit.io/user/alantinajero" target="_blank">
-            Launch System
-        </a>
-    </div>
-
-    <div class="card">
-        <h2>💻 GitHub</h2>
-
-        <a class="btn" href="https://github.com/AlanTinajero" target="_blank">
-            View Code
-        </a>
-    </div>
-
-</div>
+<div id="typing"></div>
 
 <script>
-const text = "Initializing OSINT AI System... Threat Detection Active...";
+let text = "SYSTEM ONLINE... SCANNING THREATS...";
 let i = 0;
 
 function type() {
     if (i < text.length) {
-        document.getElementById("typing").innerHTML += text.charAt(i);
+        document.getElementById("typing").innerHTML += text[i];
         i++;
-        setTimeout(type, 40);
+        setTimeout(type, 50);
     }
 }
 
