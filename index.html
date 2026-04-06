@@ -12,11 +12,12 @@ body {
     font-family: monospace;
 }
 
-/* RADAR */
+/* 🔥 RADAR (NO BLOQUEA CLICKS) */
 .radar {
     position: fixed;
     width: 100%;
     height: 100%;
+    pointer-events: none; /* CLAVE */
 }
 
 .line {
@@ -66,7 +67,7 @@ body {
     100% { top: 50%; left: 5%; }
 }
 
-/* ALERTA */
+/* ALERT */
 .alert {
     background: red;
     color: white;
@@ -101,20 +102,22 @@ h1 {
 }
 
 .card {
-    background: rgba(0,0,0,0.8);
+    background: rgba(0,0,0,0.85);
     border: 1px solid #00ffcc33;
     padding: 20px;
     margin: 20px;
 }
 
-/* BUTTON */
+/* BOTONES */
 .btn {
     background: #00ffcc;
     color: black;
-    padding: 10px;
+    padding: 12px;
     display: inline-block;
     margin-top: 10px;
     text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
 }
 </style>
 </head>
@@ -143,38 +146,15 @@ h1 {
     <div class="card">
         <h2>🌍 Intelligence Map</h2>
 
-        <div style="position:relative;">
-
         <iframe 
         src="https://www.openstreetmap.org/export/embed.html"
         width="100%" height="300">
         </iframe>
-
-        <!-- EVENTOS -->
-
-        <div style="position:absolute; top:20%; left:30%; color:red;">
-        📍 CDMX<br>
-        <small>AI anomaly detected</small><br>
-        <a href="https://www.google.com/maps?q=19.43,-99.13" target="_blank">Ver</a>
-        </div>
-
-        <div style="position:absolute; top:40%; left:60%; color:orange;">
-        📍 London<br>
-        <small>Unusual aerial activity</small><br>
-        <a href="https://www.google.com/maps?q=51.50,-0.12" target="_blank">Ver</a>
-        </div>
-
-        <div style="position:absolute; top:60%; left:20%; color:red;">
-        📍 Dubai<br>
-        <small>Heat signature anomaly</small><br>
-        <a href="https://www.google.com/maps?q=25.20,55.27" target="_blank">Ver</a>
-        </div>
-
-        </div>
     </div>
 
     <div class="card">
         <h2>🚀 Intelligence System</h2>
+
         <a class="btn" href="https://share.streamlit.io/user/alantinajero" target="_blank">
             Open Dashboard
         </a>
@@ -182,15 +162,31 @@ h1 {
 
     <div class="card">
         <h2>💻 GitHub</h2>
+
         <a class="btn" href="https://github.com/AlanTinajero" target="_blank">
-            View Code
+            View GitHub
         </a>
     </div>
 
     <div class="card">
         <h2>🔗 LinkedIn</h2>
+
         <a class="btn" href="https://www.linkedin.com/in/alan-raul-tinajero-rangel-300a18216/" target="_blank">
-            View Profile
+            View LinkedIn
+        </a>
+    </div>
+
+    <div class="card">
+        <h2>📩 Contact</h2>
+
+        <a class="btn" href="mailto:araultinajero@yahoo.com">
+            Send Email
+        </a>
+
+        <br><br>
+
+        <a class="btn" href="tel:+525535154446">
+            Call Me
         </a>
     </div>
 
